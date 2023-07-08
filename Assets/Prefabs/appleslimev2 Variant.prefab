@@ -159,7 +159,7 @@ MonoBehaviour:
   wanderDurationMax: 5
   idleDurationMin: 1
   idleDurationMax: 3
-  pushForce: 10
+  pushForce: 20
 --- !u!135 &2077712192956927844
 SphereCollider:
   m_ObjectHideFlags: 0

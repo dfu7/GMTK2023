@@ -11,12 +11,14 @@ public class GrannyHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        HealthBar.instance.SetupHearts(currentHealth);
         //initialPosition = respawnLocation.position;
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        HealthBar.instance.RemoveHealth(damage);
 
         if (currentHealth <= 0)
         {
@@ -38,11 +40,12 @@ public class GrannyHealth : MonoBehaviour
 
         // Reset Granny's health to maxHealth
         currentHealth = maxHealth;
+        HealthBar.instance.AddHealth(maxHealth);
 
         // Perform any additional actions upon respawn
 
         // Example: Restart Granny's movement or other behaviors
-        
+
         /*GrannyMovement grannyMovement = GetComponent<GrannyMovement>();
         if (grannyMovement != null)
         {
