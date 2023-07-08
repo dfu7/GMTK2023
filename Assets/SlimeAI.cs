@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class SlimeAI : MonoBehaviour
 {
-    public float detectionRadius = 10f;    // Radius within which the slime detects the player
+    public float detectionRadius = 5f;    // Radius within which the slime detects the player
     public float attackRadius = 2f;        // Radius within which the slime initiates an attack
     public float moveSpeed = 5f;           // Speed at which the slime moves
     public float attackDelay = 1f;         // Delay between slime attacks
