@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TreeTrunk2
-  m_Shader: {fileID: -6465566751694194690, guid: e654e1719fe3ec6439d5c67f7826931e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 652978a5b72989b45b46f942a401ee05, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -70,6 +70,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_89c2e40c17a04ad7b2f7897d5dfa828d_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a58f5416af1ec0543834df055df7fb83, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c1142c4e2c6f4417a1ac0e2d1676d069_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 67d799db3d068324d841b83625c8b03d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
