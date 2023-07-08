@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GrannyGlasses
-  m_Shader: {fileID: -6465566751694194690, guid: 8fcc0c42704b14141805196b6fa02d5f, type: 3}
+  m_Name: GrannyBody
+  m_Shader: {fileID: -6465566751694194690, guid: c1aee1fa2f39f924bae64959351a1357, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -59,8 +59,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_c4b70818130c482ea2ff7bf861605a49_Texture_1:
-        m_Texture: {fileID: 2800000, guid: e955f372bb3c104448174b5cc5abd266, type: 3}
+    - _SampleTexture2D_9a74c94ff91b427d8169d2380019878d_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b89160845cbeced4fb742766571452f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b8b0694c259643c0918e663560f20c05_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7f0044240b240ef468ceb3f74297d1bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -87,3 +91,16 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &6969970577787651654
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
