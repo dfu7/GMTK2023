@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,10 +52,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5889532611929344559, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 739d8aba53ab91b469217e5f3edb2eee, type: 2}
+    - target: {fileID: -5691283975361271513, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e06830b7a83f9b84a9c2c4f1c9271e88, type: 2}
     - target: {fileID: 919132149155446097, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
       propertyPath: m_Name
       value: Granny Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4800379926235108530, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62e936aa4f5b7cb499c93bdb8453e011, type: 2}
+    - target: {fileID: 8023340067020773153, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8287a89d1e75994eabf6d01fe48c2e8, type: 2}
+    - target: {fileID: 8595166200201266010, guid: 0decd985ad1d567499a51f75b21258e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b4b0db838ffcbd40b88ae6634177a6c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
