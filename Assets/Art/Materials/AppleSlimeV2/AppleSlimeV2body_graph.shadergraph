@@ -461,7 +461,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"7cfa30c0d3c5d864281c6d37393790c5\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"6699d0d05c02b6c49a8ee78739b7608f\",\"type\":3}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -815,7 +815,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Alpha",
     "m_StageCapability": 2,
-    "m_Value": 0.699999988079071,
+    "m_Value": 0.8999999761581421,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -899,7 +899,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"aee27fcd73fbf9846abdf3471c408c3f\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"ec1e55ff554956342814e0f525752c93\",\"type\":3}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0
