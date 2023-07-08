@@ -50,5 +50,7 @@ public class ThirdPersonMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        Debug.DrawLine(transform.position, Vector3.forward, Color.red);
     }
 }
