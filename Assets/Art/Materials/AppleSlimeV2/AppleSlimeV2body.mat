@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AppleslimeBody
-  m_Shader: {fileID: -6465566751694194690, guid: cb2fff5f1dabe854592e560545879ae1, type: 3}
+  m_Name: AppleSlimeV2body
+  m_Shader: {fileID: -6465566751694194690, guid: 96f2aa7931b86b44f8ceca072b881be0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -59,12 +59,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_99578250863947f0a12b8e0dcc01f6d8_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 7e1b07e9f2944d04c8742689efec4395, type: 3}
+    - _SampleTexture2D_372320b223014c6497e88802b3684c10_Texture_1:
+        m_Texture: {fileID: 2800000, guid: aee27fcd73fbf9846abdf3471c408c3f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_99ca6aafd86d4a2cb4e1a6e31bc35c48_Texture_1:
-        m_Texture: {fileID: 2800000, guid: da125021172fa564286a4ddf92afbcb0, type: 3}
+    - _SampleTexture2D_961e2b4e793d406ab3564f5f13a93ece_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7cfa30c0d3c5d864281c6d37393790c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -91,7 +91,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7370776297081277115
+--- !u!114 &4855487910001927279
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
