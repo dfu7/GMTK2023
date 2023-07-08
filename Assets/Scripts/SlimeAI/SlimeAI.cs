@@ -156,13 +156,14 @@ public class SlimeAI : MonoBehaviour
 
         // Apply force to the player to simulate a push effect
         CharacterController playerController = granny.GetComponent<CharacterController>();
+        ThirdPersonMovement ThirdPersonMovement = granny.GetComponent<ThirdPersonMovement>();
         if (playerController != null)
         {
             // Calculate the movement vector
             Vector3 movement = attackDirection.normalized * pushForce;
 
             // Apply the movement over a duration
-            StartCoroutine(PushPlayer(playerController, movement, 2f));
+            StartCoroutine(PushPlayer(playerController, ThirdPersonMovement, movement, 2f));
         }
 
         // Set the attacking flag and start the attack timer
@@ -170,8 +171,11 @@ public class SlimeAI : MonoBehaviour
         attackTimer = 0f;
     }
 
-    private System.Collections.IEnumerator PushPlayer(CharacterController controller, Vector3 movement, float duration)
+    private System.Collections.IEnumerator PushPlayer(CharacterController controller, ThirdPersonMovement movementScript, Vector3 movement, float duration)
     {
+        // Disable the ThirdPersonMovement script
+        movementScript.enabled = false;
+
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -182,12 +186,17 @@ public class SlimeAI : MonoBehaviour
             if (IsPlayerGrounded(controller))
             {
                 yield return null;
+                // Enable the ThirdPersonMovement script
+                movementScript.enabled = true;
             }
 
             elapsed += Time.deltaTime;
             yield return null;
-            
-            
+
+            // Enable the ThirdPersonMovement script
+            movementScript.enabled = true;
+
+
         }
     }
 
