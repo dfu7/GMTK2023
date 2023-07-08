@@ -85,8 +85,15 @@ public class FollowMouse : MonoBehaviour
         }
 
         Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
-        float swordDis = Vector3.Distance(worldPos, grannyMidPoint.position);
+        float swordDis = Mathf.Clamp(Vector3.Distance(worldPos, grannyMidPoint.position), 1, swordRadius);
 
-        go.transform.position = worldPos;
+        if (swordDis > swordRadius)
+        {
+            Debug.Log("out of range");
+        }
+
+        Vector3 newPos = swordDir * swordDis;
+        go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
+        Debug.DrawRay(grannyMidPoint.position, swordDir * swordDis, Color.red);
     }
 }
