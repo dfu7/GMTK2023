@@ -8,6 +8,8 @@ public class FollowMouse : MonoBehaviour
     public Transform mainCamera;
     public CinemachineFreeLook freeLookCam;
 
+    public Animator animator;
+
     public float moveSpeed = 5f;
     public float rotateSpeed = 5f;
 
@@ -65,8 +67,15 @@ public class FollowMouse : MonoBehaviour
 
         if (moveDir.magnitude >= 0.1f)
         {
+            animator.SetBool("isWalking", true);
+            Debug.Log("animated af!");
             qTo = Quaternion.LookRotation(moveDir);
             transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+            Debug.Log("idle af");
         }
         transform.rotation = Quaternion.Slerp(transform.rotation, qTo, rotateSpeed * Time.deltaTime);
 
