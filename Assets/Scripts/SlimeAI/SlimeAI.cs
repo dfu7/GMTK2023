@@ -24,6 +24,9 @@ public class SlimeAI : MonoBehaviour
     private float idleTimer = 0f;          // Timer to track the idle duration
     private Vector3 wanderDestination;     // Destination for the wander state
 
+    Animator animator;
+
+
     private enum SlimeState
     {
         Idle,
@@ -36,6 +39,7 @@ public class SlimeAI : MonoBehaviour
 
     private void Start()
     {
+        animator = this.GetComponentInChildren<Animator>();
         granny = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
 
@@ -51,6 +55,7 @@ public class SlimeAI : MonoBehaviour
         {
             case SlimeState.Idle:
                 idleTimer -= Time.deltaTime;
+                //animator.SetInteger("stateChange", 0);
 
                 if (distanceToGranny <= detectionRadius)
                 {
@@ -133,11 +138,16 @@ public class SlimeAI : MonoBehaviour
     private void Chase()
     {
         isChasing = true;
+        animator.SetInteger("stateChange", 1);
+
+        Debug.Log("Setting state to chase");
+
         navMeshAgent.SetDestination(granny.position);
     }
 
     private void Attack()
     {
+        animator.SetInteger("stateChange", 2);
         Debug.Log("Attacking Granny");
 
         // Get the GrannyHealth component from the Granny object

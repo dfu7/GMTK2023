@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503031726788653213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1224978, y: -1.7562294, z: -0.43415356}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,6 +58,7 @@ MonoBehaviour:
   idleDurationMin: 1
   idleDurationMax: 3
   pushForce: 20
+  animator: {fileID: 7991175576027201137}
 --- !u!114 &8591387479296327673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +170,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: appleslimev2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3598521684672794155, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598521684672794155, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598521684672794155, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -177,5 +190,10 @@ PrefabInstance:
 --- !u!4 &4610067477669297030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1614204292042321425, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
+  m_PrefabInstance: {fileID: 2998537200122516887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7991175576027201137 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5150616499214887910, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
   m_PrefabInstance: {fileID: 2998537200122516887}
   m_PrefabAsset: {fileID: 0}
