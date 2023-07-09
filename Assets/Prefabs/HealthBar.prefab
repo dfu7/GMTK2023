@@ -115,7 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartContainerPrefab: {fileID: 8818954817795662101, guid: 432d34cbf2c0ebc458087619c9e69d7f, type: 3}
-  heartContainers:
-  - {fileID: 8818954817795662101, guid: 432d34cbf2c0ebc458087619c9e69d7f, type: 3}
-  - {fileID: 8818954817795662101, guid: 432d34cbf2c0ebc458087619c9e69d7f, type: 3}
-  - {fileID: 8818954817795662101, guid: 432d34cbf2c0ebc458087619c9e69d7f, type: 3}
+  heartContainers: []

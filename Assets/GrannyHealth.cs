@@ -16,7 +16,7 @@ public class GrannyHealth : MonoBehaviour
     {
         g_audioSource = gameObject.AddComponent<AudioSource>();
         currentHealth = maxHealth;
-        
+        SetupHealthUI();
     }
 
     public void SetupHealthUI()
