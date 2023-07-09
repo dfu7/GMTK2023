@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class FollowMouse : MonoBehaviour
 {
     public Transform mainCamera;
+    public CinemachineFreeLook freeLookCam;
 
     public float moveSpeed = 5f;
     public float rotateSpeed = 5f;
@@ -27,8 +29,20 @@ public class FollowMouse : MonoBehaviour
     Vector3 newPos;
 
     public GameObject go;
+    public Rigidbody goRig;
     public float MAXswordRadius = 5f;
     public float MINswordRadius = 1f;
+    Vector3 lastPos = Vector3.zero;
+    public float flightSpeedThreshold = 500f;
+    public float flightSpeedMAX = 600f;
+    public float flightSwingDistanceThreshold = 10f;
+    public float flightStopSpeed = 1f;
+
+    bool playerLaunching = false;
+    public FixedJoint swordJoint;
+
+    public float camXspeed = 700f;
+    public float camYspeed = 5f;
 
     private void Start()
     {
@@ -39,6 +53,7 @@ public class FollowMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // moving
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -70,37 +85,49 @@ public class FollowMouse : MonoBehaviour
         transform.Translate(velocity * Time.deltaTime);
 
 
-        // other stuff
-        planeY = new Plane(Vector3.down, grannyMidPoint.position.y);
-
-        screenPos = Input.mousePosition;
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
-
-        if (planeY.Raycast(ray, out float distanceY))
+        if (Input.GetMouseButton(1))
         {
-            worldPos = ray.GetPoint(distanceY);
+            freeLookCam.m_YAxis.m_MaxSpeed = camYspeed;
+            freeLookCam.m_XAxis.m_MaxSpeed = camXspeed;
+            Debug.Log("RIGHT LCIKGING");
         }
-
-        // cursor position
-        newPos = worldPos;
-        float newPosDis = Vector3.Distance(newPos, grannyMidPoint.position);
-        Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
-
-        // if the cursor position is out of radius, set it to be set to the max in the direction of the cursor
-        if (newPosDis > MAXswordRadius)
+        else
         {
-            // direction the sword should point according to the mouse
-            newPos = grannyMidPoint.position + swordDir * MAXswordRadius;
+            freeLookCam.m_YAxis.m_MaxSpeed = 0;
+            freeLookCam.m_XAxis.m_MaxSpeed = 0;
+
+            // other stuff
+            planeY = new Plane(Vector3.down, grannyMidPoint.position.y);
+
+            screenPos = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(screenPos);
+
+            if (planeY.Raycast(ray, out float distanceY))
+            {
+                worldPos = ray.GetPoint(distanceY);
+            }
+
+            // cursor position
+            newPos = worldPos;
+            float newPosDis = Vector3.Distance(newPos, grannyMidPoint.position);
+            Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
+
+            // if the cursor position is out of radius, set it to be set to the max in the direction of the cursor
+            if (newPosDis > MAXswordRadius)
+            {
+                // direction the sword should point according to the mouse
+                newPos = grannyMidPoint.position + swordDir * MAXswordRadius;
+            }
+
+            if (newPosDis < MINswordRadius)
+            {
+                newPos = grannyMidPoint.position + swordDir * MINswordRadius;
+            }
+
+            go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
+
+            // rotate sword
+            go.transform.rotation = Quaternion.LookRotation(swordDir);
         }
-
-        if (newPosDis < MINswordRadius)
-        {
-            newPos = grannyMidPoint.position + swordDir * MINswordRadius;
-        }
-
-        go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
-
-        // rotate sword
-        go.transform.rotation = Quaternion.LookRotation(swordDir);
     }
 }
