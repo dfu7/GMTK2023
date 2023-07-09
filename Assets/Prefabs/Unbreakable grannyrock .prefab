@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Unbreakable grannyrock '
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
+      propertyPath: m_TagString
+      value: Unbreakable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5714161305383169481}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4561823383206863191}
   m_SourcePrefab: {fileID: 100100000, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
 --- !u!1 &6133179536172808277 stripped
 GameObject:
@@ -111,3 +118,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
+--- !u!114 &4561823383206863191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133179536172808277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af6d71df9fd51747af7ae1319b1cff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualEffect: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 8fc0c10cc6a59144a98acc47dfaedee7, type: 3}
