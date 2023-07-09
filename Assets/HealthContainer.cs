@@ -9,6 +9,7 @@ public class HealthContainer : MonoBehaviour
 
     [Range(0, 1)] float fill;
     [SerializeField] Image fillImage;
+
     public void SetHeart(float count)
     {
         fill = count;

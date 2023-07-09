@@ -198,7 +198,7 @@ public class SlimeAI : MonoBehaviour
             Vector3 movement = attackDirection.normalized * pushForce;
 
             // Apply the movement over a duration
-            StartCoroutine(PushPlayer(playerController, ThirdPersonMovement, movement, 2f));
+            //StartCoroutine(PushPlayer(playerController, ThirdPersonMovement, movement, 2f));
         }
 
         // Set the attacking flag and start the attack timer

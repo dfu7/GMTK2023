@@ -7,10 +7,12 @@ public class HealthBar : MonoBehaviour
     public static HealthBar instance;
 
     [SerializeField] GameObject heartContainerPrefab;
+
     [SerializeField] List<GameObject> heartContainers;
     int totalHearts;
     float currentHearts;
     HealthContainer currentContainer;
+    
     // Start is called before the first frame update
     void Start()
     {
