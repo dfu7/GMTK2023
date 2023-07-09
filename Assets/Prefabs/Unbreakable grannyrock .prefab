@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fc4a6e6f0a8f7bd4cb13ab22674e7c16, type: 2}
     - target: {fileID: 919132149155446097, guid: 75a063835665f9a40975bdeab342d8ac, type: 3}
       propertyPath: m_Name
-      value: grannyrock Variant
+      value: 'Unbreakable grannyrock '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

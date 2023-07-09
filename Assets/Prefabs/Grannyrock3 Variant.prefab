@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
       propertyPath: m_LocalScale.x
@@ -79,5 +79,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31081851500067617}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1055242937374947253}
   m_SourcePrefab: {fileID: 100100000, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
+--- !u!1 &8729755426806596222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
+  m_PrefabInstance: {fileID: 8495824776459566895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &31081851500067617
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729755426806596222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: 102702a53d43bad48ae74dd9d3451cb2, type: 3}
+--- !u!114 &1055242937374947253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729755426806596222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af6d71df9fd51747af7ae1319b1cff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualEffect: {fileID: 7632733292203665642, guid: 114dbeeb20ac53844a9c144a63746854, type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8591387479296327673}
   - component: {fileID: 421114350862985861}
   - component: {fileID: 5924412702261487844}
+  - component: {fileID: 581797208902768557}
   m_Layer: 0
   m_Name: AppleSlimeEnemy
   m_TagString: Untagged
@@ -58,7 +59,6 @@ MonoBehaviour:
   idleDurationMin: 1
   idleDurationMax: 3
   pushForce: 20
-  animator: {fileID: 7991175576027201137}
 --- !u!114 &8591387479296327673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +114,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &581797208902768557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503031726788653213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af6d71df9fd51747af7ae1319b1cff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualEffect: {fileID: 7320137502236716975, guid: b87ae081c4f7cbc4f9546a4253119383, type: 3}
 --- !u!1001 &2998537200122516887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,10 +203,5 @@ PrefabInstance:
 --- !u!4 &4610067477669297030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1614204292042321425, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
-  m_PrefabInstance: {fileID: 2998537200122516887}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7991175576027201137 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5150616499214887910, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
   m_PrefabInstance: {fileID: 2998537200122516887}
   m_PrefabAsset: {fileID: 0}
