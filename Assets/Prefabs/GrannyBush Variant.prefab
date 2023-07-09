@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 8747864628088287260, guid: aecd9290ca4d2eb45be3c63b39c9dfab, type: 3}
+  AttackEffect: {fileID: 2209311966499140128, guid: f675f9b66e443c345b58f94544385c6e, type: 3}
   audioClip: {fileID: 8300000, guid: 12cdaa2212b56c3429b10ce2fd9773e2, type: 3}
 --- !u!65 &1542170247227146382
 BoxCollider:

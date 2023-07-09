@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2427368123944621383}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: Attack 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3301070212063080555}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5132269540450609406
 GameObject:
@@ -255,7 +255,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.7169812, g: 0.15602338, b: 0.09807763, a: 1}
+      maxColor: {r: 1, g: 0.9552363, b: 0.4669811, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
