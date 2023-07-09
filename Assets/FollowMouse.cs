@@ -21,13 +21,14 @@ public class FollowMouse : MonoBehaviour
     float gravity = -9.10f;
 
     public Transform grannyMidPoint;
-    Plane plane;
+    Plane planeY;
     Vector3 screenPos;
     Vector3 worldPos;
     Vector3 newPos;
 
     public GameObject go;
-    public float swordRadius = 5f;
+    public float MAXswordRadius = 5f;
+    public float MINswordRadius = 1f;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class FollowMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // moving
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
@@ -69,27 +71,36 @@ public class FollowMouse : MonoBehaviour
 
 
         // other stuff
-        plane = new Plane(Vector3.down, grannyMidPoint.position.y);
+        planeY = new Plane(Vector3.down, grannyMidPoint.position.y);
 
         screenPos = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        if (plane.Raycast(ray, out float distance) )
+        if (planeY.Raycast(ray, out float distanceY))
         {
-            worldPos = ray.GetPoint(distance);
+            worldPos = ray.GetPoint(distanceY);
         }
 
         // cursor position
         newPos = worldPos;
         float newPosDis = Vector3.Distance(newPos, grannyMidPoint.position);
+        Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
 
         // if the cursor position is out of radius, set it to be set to the max in the direction of the cursor
-        if (newPosDis > swordRadius)
+        if (newPosDis > MAXswordRadius)
         {
             // direction the sword should point according to the mouse
-            newPos = grannyMidPoint.position + (worldPos - grannyMidPoint.position).normalized * swordRadius;
+            newPos = grannyMidPoint.position + swordDir * MAXswordRadius;
+        }
+
+        if (newPosDis < MINswordRadius)
+        {
+            newPos = grannyMidPoint.position + swordDir * MINswordRadius;
         }
 
         go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
+
+        // rotate sword
+        go.transform.rotation = Quaternion.LookRotation(swordDir);
     }
 }
