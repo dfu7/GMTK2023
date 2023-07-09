@@ -30,7 +30,7 @@ public class SlimeAI : MonoBehaviour
     private enum SlimeState
     {
         Idle,
-        Chase,
+        Walk,
         Attack,
         Wander
     }
@@ -54,12 +54,13 @@ public class SlimeAI : MonoBehaviour
         switch (currentState)
         {
             case SlimeState.Idle:
+                animator.SetBool("IsIdle", true);
 
                 idleTimer -= Time.deltaTime;
-
                 if (distanceToGranny <= detectionRadius)
                 {
-                    currentState = SlimeState.Chase;
+                    animator.SetBool("IsIdle", false);
+                    currentState = SlimeState.Walk;
                 }
                 else if (idleTimer <= 0f)
                 {
@@ -71,27 +72,34 @@ public class SlimeAI : MonoBehaviour
                 }
                 break;
 
-            case SlimeState.Chase:
+            case SlimeState.Walk:
+                animator.SetBool("IsWalk", true);
+
                 if (distanceToGranny <= attackRadius)
                 {
+                    animator.SetBool("IsWalk", false);
                     currentState = SlimeState.Attack;
                 }
                 else if (distanceToGranny > detectionRadius)
                 {
+                    animator.SetBool("IsWalk", false);
                     currentState = SlimeState.Idle;
 
                     // Reset idle timer
                     idleTimer = Random.Range(idleDurationMin, idleDurationMax);
                 }
 
-                Chase();
+                Walk();
                 break;
 
             case SlimeState.Attack:
+                animator.SetBool("IsAttack", true);
+
                 if (distanceToGranny > attackRadius)
                 {
-                    currentState = SlimeState.Chase;
-                    Chase();
+                    animator.SetBool("IsAttack", false);
+                    currentState = SlimeState.Walk;
+                    Walk();
                 }
                 else
                 {
@@ -102,12 +110,13 @@ public class SlimeAI : MonoBehaviour
                 }
                 break;
 
+            /*
             case SlimeState.Wander:
                 wanderTimer -= Time.deltaTime;
 
                 if (distanceToGranny <= detectionRadius)
                 {
-                    currentState = SlimeState.Chase;
+                    currentState = SlimeState.Walk;
                 }
                 else if (wanderTimer <= 0f)
                 {
@@ -121,6 +130,7 @@ public class SlimeAI : MonoBehaviour
                     //Wander();
                 }
                 break;
+            */
         }
 
         // Update attack timer
@@ -134,30 +144,30 @@ public class SlimeAI : MonoBehaviour
             }
         }
 
-        UpdateAnimator();
+        //UpdateAnimator();
     }
     private void UpdateAnimator()
     {
         animator.SetBool("IsIdle", false);
-        animator.SetBool("IsChase", false);
+        animator.SetBool("IsWalk", false);
         animator.SetBool("IsAttack", false);
 
         bool isIdle = !isChasing && !isAttacking;
-        bool isChasingPrevious = animator.GetBool("IsChase");
+        bool isChasingPrevious = animator.GetBool("IsWalk");
         bool isAttackingPrevious = animator.GetBool("IsAttack");
 
         animator.SetBool("IsIdle", isIdle);
-        animator.SetBool("IsChase", isChasing && !isAttacking);
+        animator.SetBool("IsWalk", isChasing && !isAttacking);
         animator.SetBool("IsAttack", isAttacking);
 
-        // Transition from Idle to Chase
+        // Transition from Idle to Walk
         if (isIdle && !isChasingPrevious)
         {
             animator.SetBool("IsIdle", false);
-            animator.SetBool("IsChase", true);
+            animator.SetBool("IsWalk", true);
         }
     }
-    private void Chase()
+    private void Walk()
     {
         isChasing = true;
         navMeshAgent.SetDestination(granny.position);
