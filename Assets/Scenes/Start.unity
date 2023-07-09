@@ -337,8 +337,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 493983674179972484, guid: 336b4eede143558478d0dde0e75af6f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 262787736}
   m_SourcePrefab: {fileID: 100100000, guid: 336b4eede143558478d0dde0e75af6f1, type: 3}
+--- !u!1 &262787735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 493983674179972484, guid: 336b4eede143558478d0dde0e75af6f1, type: 3}
+  m_PrefabInstance: {fileID: 262787734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &262787736
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262787735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4215868f57b191743b4f74120894eb39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &305003172 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8308929178655771755, guid: adbb0e20acc07b0488ff789734a1cb0a, type: 3}
@@ -1395,6 +1424,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1814168779}
     m_Modifications:
+    - target: {fileID: 1780959586289632210, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_Time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780959586289632210, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4384889285111795151, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
       propertyPath: m_Name
       value: Sword
@@ -1454,6 +1491,22 @@ PrefabInstance:
     - target: {fileID: 5410545773891056083, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 347.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521576359098392559, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_Time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521576359098392559, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490761121040498176, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_Time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490761121040498176, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
