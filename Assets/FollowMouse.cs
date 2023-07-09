@@ -24,6 +24,7 @@ public class FollowMouse : MonoBehaviour
     Plane plane;
     Vector3 screenPos;
     Vector3 worldPos;
+    Vector3 newPos;
 
     public GameObject go;
     public float swordRadius = 5f;
@@ -66,14 +67,8 @@ public class FollowMouse : MonoBehaviour
 
         transform.Translate(velocity * Time.deltaTime);
 
-        // other stuff
-        /*
-        Vector3 screenPos = Input.mousePosition;
-        screenPos.z = Camera.main.nearClipPlane + 1;
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-        Debug.DrawLine(transform.position, worldPos, Color.red);
-        */
 
+        // other stuff
         plane = new Plane(Vector3.down, grannyMidPoint.position.y);
 
         screenPos = Input.mousePosition;
@@ -84,16 +79,17 @@ public class FollowMouse : MonoBehaviour
             worldPos = ray.GetPoint(distance);
         }
 
-        Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
-        float swordDis = Mathf.Clamp(Vector3.Distance(worldPos, grannyMidPoint.position), 1, swordRadius);
+        // cursor position
+        newPos = worldPos;
+        float newPosDis = Vector3.Distance(newPos, grannyMidPoint.position);
 
-        if (swordDis > swordRadius)
+        // if the cursor position is out of radius, set it to be set to the max in the direction of the cursor
+        if (newPosDis > swordRadius)
         {
-            Debug.Log("out of range");
+            // direction the sword should point according to the mouse
+            newPos = grannyMidPoint.position + (worldPos - grannyMidPoint.position).normalized * swordRadius;
         }
 
-        Vector3 newPos = swordDir * swordDis;
         go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
-        Debug.DrawRay(grannyMidPoint.position, swordDir * swordDis, Color.red);
     }
 }
