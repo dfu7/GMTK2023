@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -14,10 +15,17 @@ public class CollisionHandler : MonoBehaviour
             if (gameObject.CompareTag("Slime"))
             {
                 SlimeKilled();
+                gameObject.GetComponentInChildren<Animator>().SetBool("IsDead", true);
             }
             PlayVisualEffect();
-            Destroy(gameObject);
+            StartCoroutine(SlimeDeath());
         }
+    }
+
+    IEnumerator SlimeDeath()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 
     private void PlayVisualEffect()
