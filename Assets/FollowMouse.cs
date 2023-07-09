@@ -82,6 +82,7 @@ public class FollowMouse : MonoBehaviour
 
             s_audioSource.clip = walkClip;
             s_audioSource.loop = true;
+            s_audioSource.volume = 0.05f;
 
             if (!s_audioSource.isPlaying)
             {
