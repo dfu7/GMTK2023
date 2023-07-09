@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 7632733292203665642, guid: 114dbeeb20ac53844a9c144a63746854, type: 3}
+  audioClip: {fileID: 8300000, guid: 12cdaa2212b56c3429b10ce2fd9773e2, type: 3}
