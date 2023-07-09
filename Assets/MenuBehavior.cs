@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToStart()
     {
-        SceneManager.LoadScene("Start Menu");
+        SceneManager.LoadScene("Start");
     }
 
     public void SetSFXVolume(float level)
