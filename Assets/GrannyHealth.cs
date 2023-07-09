@@ -9,8 +9,12 @@ public class GrannyHealth : MonoBehaviour
     public GameObject AttackEffect;
     public GameObject DeathEffect;
 
+    AudioSource g_audioSource;
+    public AudioClip dingClip;
+
     private void Start()
     {
+        g_audioSource = gameObject.AddComponent<AudioSource>();
         currentHealth = maxHealth;
         HealthBar.instance.SetupHearts(maxHealth);
     }
@@ -19,6 +23,9 @@ public class GrannyHealth : MonoBehaviour
     {
         currentHealth -= damage;
         HealthBar.instance.RemoveHealth(damage);
+
+        g_audioSource.clip = dingClip;
+        g_audioSource.Play();
 
         if (currentHealth <= 0)
         {
@@ -29,6 +36,8 @@ public class GrannyHealth : MonoBehaviour
         {
             GameObject attackInstance = Instantiate(AttackEffect, transform.position, Quaternion.identity);
             Destroy(attackInstance, 1f);
+
+
             // Play hurt animation or effects
         }
     }
@@ -40,35 +49,19 @@ public class GrannyHealth : MonoBehaviour
         GameObject DeathInstance = Instantiate(DeathEffect, transform.position, Quaternion.identity);
         Destroy(DeathInstance, 1f);
 
-        // Reset Granny's health to maxHealth
-        currentHealth = maxHealth;
-        HealthBar.instance.AddHealth(maxHealth);
-
         // Start the respawn coroutine
         StartCoroutine(RespawnAfterDelay());
     }
     private System.Collections.IEnumerator RespawnAfterDelay()
     {
-        // Store the initial scale
-        Vector3 initialScale = transform.localScale;
+            yield return new WaitForSeconds(1f);
 
-        // Scale down the player gradually
-        float duration = 0.5f;
-        float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration;
-            float scale = Mathf.Lerp(1f, 0.1f, t);
-            transform.localScale = initialScale * scale;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+            // Reset Granny's position to the respawn location
+            transform.position = respawnLocation.position;
 
-        // Reset the scale to the initial value
-        transform.localScale = initialScale;
-
-        // Reset Granny's position to the respawn location
-        transform.position = respawnLocation.position;
+            // Reset Granny's health to maxHealth
+            currentHealth = maxHealth;
+        HealthBar.instance.SetupHearts(maxHealth);
     }
 
 }

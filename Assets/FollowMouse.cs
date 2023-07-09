@@ -49,8 +49,16 @@ public class FollowMouse : MonoBehaviour
     public float camXspeed = 700f;
     public float camYspeed = 5f;
 
+    AudioSource s_audioSource;
+    public AudioClip walkClip;
+
+    [SerializeField] GameObject dustPoofs;
+    [SerializeField] GameObject spiralPoofs;
+
     private void Start()
     {
+        s_audioSource = gameObject.AddComponent<AudioSource>();
+
         qTo = transform.rotation;
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -69,6 +77,18 @@ public class FollowMouse : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
 
+            dustPoofs.SetActive(true);
+            spiralPoofs.SetActive(true);
+
+            s_audioSource.clip = walkClip;
+            s_audioSource.loop = true;
+
+            if (!s_audioSource.isPlaying)
+            {
+                s_audioSource.Play();
+            }
+            
+
             //Setting Walking to true. Loop while walk is true
             //Create Puffs of Smoke
 
@@ -79,6 +99,11 @@ public class FollowMouse : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+            dustPoofs.SetActive(false);
+            spiralPoofs.SetActive(false);
+
+            s_audioSource.Stop();
+
             Debug.Log("idle af");
         }
         transform.rotation = Quaternion.Slerp(transform.rotation, qTo, rotateSpeed * Time.deltaTime);
@@ -99,6 +124,8 @@ public class FollowMouse : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         transform.Translate(velocity * Time.deltaTime);
+
+       
 
 
         if (Input.GetMouseButton(1))
@@ -127,6 +154,8 @@ public class FollowMouse : MonoBehaviour
             newPos = worldPos;
             float newPosDis = Vector3.Distance(newPos, grannyMidPoint.position);
             Vector3 swordDir = (worldPos - grannyMidPoint.position).normalized;
+
+          
 
             // if the cursor position is out of radius, set it to be set to the max in the direction of the cursor
             if (newPosDis > MAXswordRadius)
