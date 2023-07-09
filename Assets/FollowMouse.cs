@@ -28,10 +28,13 @@ public class FollowMouse : MonoBehaviour
     Vector3 worldPos;
     Vector3 newPos;
 
-    public GameObject go;
-    public Rigidbody goRig;
+    public GameObject sword;
     public float MAXswordRadius = 5f;
     public float MINswordRadius = 1f;
+
+    /*
+    public Rigidbody goRig;
+
     Vector3 lastPos = Vector3.zero;
     public float flightSpeedThreshold = 500f;
     public float flightSpeedMAX = 600f;
@@ -40,7 +43,7 @@ public class FollowMouse : MonoBehaviour
 
     bool playerLaunching = false;
     public FixedJoint swordJoint;
-
+    */
     public float camXspeed = 700f;
     public float camYspeed = 5f;
 
@@ -124,10 +127,10 @@ public class FollowMouse : MonoBehaviour
                 newPos = grannyMidPoint.position + swordDir * MINswordRadius;
             }
 
-            go.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
+            sword.transform.position = new Vector3(newPos.x, grannyMidPoint.position.y, newPos.z);
 
             // rotate sword
-            go.transform.rotation = Quaternion.LookRotation(swordDir);
+            sword.transform.rotation = Quaternion.LookRotation(swordDir);
         }
     }
 }

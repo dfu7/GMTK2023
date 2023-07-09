@@ -709,6 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  freeLookCam: {fileID: 6749247006963547591}
   moveSpeed: 5
   rotateSpeed: 10
   jumpHeight: 1
@@ -718,9 +719,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   grannyMidPoint: {fileID: 90777356247563967}
-  go: {fileID: 4384889285111795151, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
+  sword: {fileID: 4384889285111795151, guid: 1b72d33831147c64ba936c169d42c9c9, type: 3}
   MAXswordRadius: 7
   MINswordRadius: 4
+  camXspeed: 700
+  camYspeed: 5
 --- !u!65 &5300205404257699058
 BoxCollider:
   m_ObjectHideFlags: 0
