@@ -9,21 +9,14 @@ public class HealthContainer : MonoBehaviour
 
     [Range(0, 1)] float fill;
     [SerializeField] Image fillImage;
-
-    private void Update()
-    {
-        //
-    }
-
-    public void SetHealth(float count)
+    public void SetHeart(float count)
     {
         fill = count;
         fillImage.fillAmount = fill;
         count--;
-
         if (next != null)
         {
-            next.SetHealth(count);
+            next.SetHeart(count);
         }
     }
 }

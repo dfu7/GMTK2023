@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470607760834740822}
   - component: {fileID: 1521543071679456467}
-  - component: {fileID: 1301547193543103940}
+  - component: {fileID: 5306344737263616981}
   m_Layer: 5
   m_Name: AppleFill
   m_TagString: Untagged
@@ -46,7 +46,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4660676678051627746}
   m_CullTransparentMesh: 1
---- !u!114 &1301547193543103940
+--- !u!114 &5306344737263616981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,14 +66,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 9cde630e647325c4c843243e90dd767e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 0
-  m_FillOrigin: 2
+  m_FillClockwise: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8818954817795662101
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7061511321215898252}
   - component: {fileID: 5704543613681809248}
-  - component: {fileID: 1998963896981142599}
+  - component: {fileID: 1595095769220168989}
   - component: {fileID: 3636366641546264156}
   m_Layer: 5
   m_Name: AppleContainer
@@ -124,7 +124,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8818954817795662101}
   m_CullTransparentMesh: 1
---- !u!114 &1998963896981142599
+--- !u!114 &1595095769220168989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,14 +137,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cde630e647325c4c843243e90dd767e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -167,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   next: {fileID: 0}
-  fillImage: {fileID: 1301547193543103940}
+  fillImage: {fileID: 5306344737263616981}

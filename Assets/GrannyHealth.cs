@@ -16,13 +16,13 @@ public class GrannyHealth : MonoBehaviour
     {
         g_audioSource = gameObject.AddComponent<AudioSource>();
         currentHealth = maxHealth;
-        HealthBar.instance.SetupHearts(3);
+        HealthBar.instance.SetupHearts(maxHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        HealthBar.instance.RemoveHealth(damage);
+        HealthBar.instance.RemoveHearts(damage);
 
         g_audioSource.clip = dingClip;
         g_audioSource.Play();

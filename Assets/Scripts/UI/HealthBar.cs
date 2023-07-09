@@ -6,84 +6,83 @@ public class HealthBar : MonoBehaviour
 {
     public static HealthBar instance;
 
-    [SerializeField] GameObject healthContainerPrefab;
-    [SerializeField] List<GameObject> healthContainers;
-
-    int totalHealth;
-    float currentHealth;
+    [SerializeField] GameObject heartContainerPrefab;
+    [SerializeField] List<GameObject> heartContainers;
+    int totalHearts;
+    float currentHearts;
     HealthContainer currentContainer;
-
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        healthContainers = new List<GameObject>();
-    }
+        heartContainers = new List<GameObject>();
 
-    public void SetupHearts(int healthIn)
+    }
+    //ZeldaHealthBar.instance.SetupHearts(valueIn);
+    public void SetupHearts(int heartsIn)
     {
-        healthContainers.Clear();
-        for(int i = transform.childCount -1; i >=0; i--)
+        heartContainers.Clear();
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
             Destroy(transform.GetChild(i).gameObject);
         }
+        totalHearts = heartsIn;
+        currentHearts = (float)totalHearts;
 
-        totalHealth = healthIn;
-        currentHealth = (float)totalHealth;
-
-        for (int i = 0; i < totalHealth; i++)
+        for (int i = 0; i < totalHearts; i++)
         {
-            GameObject newHealth = Instantiate(healthContainerPrefab, transform);
-            healthContainers.Add(newHealth);
-            if(currentContainer != null)
+            GameObject newHeart = Instantiate(heartContainerPrefab, transform);
+            heartContainers.Add(newHeart);
+            if (currentContainer != null)
             {
-                currentContainer.next = newHealth.GetComponent<HealthContainer>();
+                currentContainer.next = newHeart.GetComponent<HealthContainer>();
             }
-            currentContainer = newHealth.GetComponent<HealthContainer>();
+            currentContainer = newHeart.GetComponent<HealthContainer>();
         }
-        currentContainer = healthContainers[0].GetComponent<HealthContainer>();
+        currentContainer = heartContainers[0].GetComponent<HealthContainer>();
     }
+    //ZeldaHealthBar.instance.SetCurrentHealth(valueIn);
     public void SetCurrentHealth(float health)
     {
-        currentHealth = health;
-        currentContainer.SetHealth(currentHealth);
-    }
+        currentHearts = health;
+        currentContainer.SetHeart(currentHearts);
 
-    public void AddHealth(float healthUp)
+    }
+    //ZeldaHealthBar.instance.AddHearts(valueIn);
+    public void AddHearts(float healthUp)
     {
-        currentHealth += healthUp;
-        if (currentHealth > healthUp)
+        currentHearts += healthUp;
+        if (currentHearts > totalHearts)
         {
-            currentHealth = (float)totalHealth;
+            currentHearts = (float)totalHearts;
         }
-        currentContainer.SetHealth(currentHealth);
+        currentContainer.SetHeart(currentHearts);
     }
-
-    public void RemoveHealth(float healthDown)
+    //ZeldaHealthBar.instance.RemoveHearts(valueIn);
+    public void RemoveHearts(float healthDown)
     {
-        currentHealth -= healthDown;
-        if (currentHealth < 0)
+        currentHearts -= healthDown;
+        if (currentHearts < 0)
         {
-            currentHealth = 0f;
+            currentHearts = 0f;
         }
-        currentContainer.SetHealth(currentHealth);
+        currentContainer.SetHeart(currentHearts);
     }
-
+    //ZeldaHealthBar.instance.AddContainer(valueIn);
     public void AddContainer()
     {
-        GameObject newHeart = Instantiate(healthContainerPrefab, transform);
-        currentContainer = healthContainers[healthContainers.Count - 1].GetComponent<HealthContainer>();
-        healthContainers.Add(newHeart);
+        GameObject newHeart = Instantiate(heartContainerPrefab, transform);
+        currentContainer = heartContainers[heartContainers.Count - 1].GetComponent<HealthContainer>();
+        heartContainers.Add(newHeart);
 
         if (currentContainer != null)
         {
             currentContainer.next = newHeart.GetComponent<HealthContainer>();
         }
 
-        currentContainer = healthContainers[0].GetComponent<HealthContainer>();
-
-        totalHealth++;
-        currentHealth = totalHealth;
-        SetCurrentHealth(currentHealth);
+        currentContainer = heartContainers[0].GetComponent<HealthContainer>();
+        totalHearts++;
+        currentHearts = totalHearts;
+        SetCurrentHealth(currentHearts);
     }
 }
