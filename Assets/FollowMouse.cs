@@ -93,7 +93,6 @@ public class FollowMouse : MonoBehaviour
             //Setting Walking to true. Loop while walk is true
             //Create Puffs of Smoke
 
-            Debug.Log("animated af!");
             qTo = Quaternion.LookRotation(moveDir);
             transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
         }
@@ -104,8 +103,6 @@ public class FollowMouse : MonoBehaviour
             spiralPoofs.SetActive(false);
 
             s_audioSource.Stop();
-
-            Debug.Log("idle af");
         }
         transform.rotation = Quaternion.Slerp(transform.rotation, qTo, rotateSpeed * Time.deltaTime);
 
@@ -133,7 +130,6 @@ public class FollowMouse : MonoBehaviour
         {
             freeLookCam.m_YAxis.m_MaxSpeed = camYspeed;
             freeLookCam.m_XAxis.m_MaxSpeed = camXspeed;
-            Debug.Log("RIGHT LCIKGING");
         }
         else
         {

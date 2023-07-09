@@ -42,6 +42,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        CloseControls();
+        Debug.Log("pause clicked");
+        Cursor.lockState = CursorLockMode.Confined;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -49,6 +52,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -56,11 +60,13 @@ public class PauseMenu : MonoBehaviour
 
     public void DisplayControls()
     {
+        Debug.Log("display ctrls clicked");
         HowTo.SetActive(true);
     }
 
     public void CloseControls()
     {
+        Debug.Log("close ctrls clicked");
         HowTo.SetActive(false);
     }
 
