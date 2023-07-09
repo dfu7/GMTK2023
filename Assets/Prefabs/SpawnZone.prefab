@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &399838673577755471
 MonoBehaviour:
@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9fba0f3f681234c99d40712de02a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimePrefab: {fileID: 2102370603580765355, guid: edf7f25880bdc574abd26e2258e5bce5, type: 3}
+  slimePrefab: {fileID: 7503031726788653213, guid: 0caf85f991cda264aa9de4d6b05d3416, type: 3}
+  spawnCountOnStart: 5
   spawnRadius: 5
   spawnInterval: 3
+  minScale: 0.5
+  maxScale: 1.5
