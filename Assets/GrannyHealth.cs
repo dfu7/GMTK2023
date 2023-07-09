@@ -11,7 +11,7 @@ public class GrannyHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        HealthBar.instance.SetupHearts(currentHealth);
+        HealthBar.instance.SetupHearts(maxHealth);
         //initialPosition = respawnLocation.position;
     }
 

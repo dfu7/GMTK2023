@@ -54,8 +54,8 @@ public class SlimeAI : MonoBehaviour
         switch (currentState)
         {
             case SlimeState.Idle:
+
                 idleTimer -= Time.deltaTime;
-                //animator.SetInteger("stateChange", 0);
 
                 if (distanceToGranny <= detectionRadius)
                 {
@@ -63,7 +63,7 @@ public class SlimeAI : MonoBehaviour
                 }
                 else if (idleTimer <= 0f)
                 {
-                    currentState = SlimeState.Wander;
+                    //currentState = SlimeState.Wander;
                     wanderTimer = Random.Range(wanderDurationMin, wanderDurationMax);
 
                     // Set a new random destination for wandering
@@ -118,7 +118,7 @@ public class SlimeAI : MonoBehaviour
                 }
                 else if (!isWandering)
                 {
-                    Wander();
+                    //Wander();
                 }
                 break;
         }
@@ -133,23 +133,38 @@ public class SlimeAI : MonoBehaviour
                 isAttacking = false;
             }
         }
-    }
 
+        UpdateAnimator();
+    }
+    private void UpdateAnimator()
+    {
+        animator.SetBool("IsIdle", false);
+        animator.SetBool("IsChase", false);
+        animator.SetBool("IsAttack", false);
+
+        bool isIdle = !isChasing && !isAttacking;
+        bool isChasingPrevious = animator.GetBool("IsChase");
+        bool isAttackingPrevious = animator.GetBool("IsAttack");
+
+        animator.SetBool("IsIdle", isIdle);
+        animator.SetBool("IsChase", isChasing && !isAttacking);
+        animator.SetBool("IsAttack", isAttacking);
+
+        // Transition from Idle to Chase
+        if (isIdle && !isChasingPrevious)
+        {
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsChase", true);
+        }
+    }
     private void Chase()
     {
         isChasing = true;
-        animator.SetInteger("stateChange", 1);
-
-        Debug.Log("Setting state to chase");
-
         navMeshAgent.SetDestination(granny.position);
     }
 
     private void Attack()
     {
-        animator.SetInteger("stateChange", 2);
-        Debug.Log("Attacking Granny");
-
         // Get the GrannyHealth component from the Granny object
         GrannyHealth grannyHealth = granny.GetComponent<GrannyHealth>();
 
