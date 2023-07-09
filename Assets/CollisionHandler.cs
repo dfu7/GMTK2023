@@ -8,6 +8,8 @@ public class CollisionHandler : MonoBehaviour
 
     public GameObject visualEffect; // Assign the visual effect prefab in the Inspector
 
+    public GameObject AttackEffect;
+
     AudioSource audioSource;
     public AudioClip audioClip;
 
@@ -18,6 +20,8 @@ public class CollisionHandler : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Sword"))
         {
+            PlayHitEffect();
+
             if (!gameObject.CompareTag("Unbreakable"))
             {
                 PlayVisualEffect();
@@ -60,7 +64,14 @@ public class CollisionHandler : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
-
+    private void PlayHitEffect()
+    {
+        if (AttackEffect != null)
+        {
+            GameObject attackInstance = Instantiate(AttackEffect, transform.position, Quaternion.identity);
+            Destroy(attackInstance, 1f);
+        }
+    }
     private void PlayVisualEffect()
     {
         if (visualEffect != null)

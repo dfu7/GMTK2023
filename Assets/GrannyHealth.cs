@@ -6,7 +6,8 @@ public class GrannyHealth : MonoBehaviour
     public int currentHealth;                    // Current health of the Granny
     public Transform respawnLocation;            // Respawn location for the Granny
 
-    //private Vector3 initialPosition;              // Initial position of the Granny
+    public GameObject AttackEffect;
+    public GameObject DeathEffect;
 
     private void Start()
     {
@@ -26,6 +27,8 @@ public class GrannyHealth : MonoBehaviour
         }
         else
         {
+            GameObject attackInstance = Instantiate(AttackEffect, transform.position, Quaternion.identity);
+            Destroy(attackInstance, 1f);
             // Play hurt animation or effects
         }
     }
@@ -34,22 +37,38 @@ public class GrannyHealth : MonoBehaviour
     {
         Debug.Log("Granny Died");
 
-        // Reset Granny's position to the respawn location
-        transform.position = respawnLocation.position;
+        GameObject DeathInstance = Instantiate(DeathEffect, transform.position, Quaternion.identity);
+        Destroy(DeathInstance, 1f);
 
         // Reset Granny's health to maxHealth
         currentHealth = maxHealth;
         HealthBar.instance.AddHealth(maxHealth);
 
-        // Perform any additional actions upon respawn
-
-        // Example: Restart Granny's movement or other behaviors
-
-        /*GrannyMovement grannyMovement = GetComponent<GrannyMovement>();
-        if (grannyMovement != null)
-        {
-            grannyMovement.RestartMovement();
-        }
-        */
+        // Start the respawn coroutine
+        StartCoroutine(RespawnAfterDelay());
     }
+    private System.Collections.IEnumerator RespawnAfterDelay()
+    {
+        // Store the initial scale
+        Vector3 initialScale = transform.localScale;
+
+        // Scale down the player gradually
+        float duration = 0.5f;
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            float scale = Mathf.Lerp(1f, 0.1f, t);
+            transform.localScale = initialScale * scale;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Reset the scale to the initial value
+        transform.localScale = initialScale;
+
+        // Reset Granny's position to the respawn location
+        transform.position = respawnLocation.position;
+    }
+
 }
