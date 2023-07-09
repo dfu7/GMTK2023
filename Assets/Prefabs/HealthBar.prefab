@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4796081806393001496}
   - component: {fileID: 7778809602786323635}
   - component: {fileID: 5819390789366570950}
-  - component: {fileID: 5676829093899078773}
+  - component: {fileID: 4239022940403466106}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &5676829093899078773
+--- !u!114 &4239022940403466106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
