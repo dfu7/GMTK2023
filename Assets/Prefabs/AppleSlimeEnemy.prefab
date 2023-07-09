@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 7320137502236716975, guid: b87ae081c4f7cbc4f9546a4253119383, type: 3}
+  audioClip: {fileID: 8300000, guid: 1f5b5e06ced6e904c9ee9987d6840b29, type: 3}
 --- !u!1001 &2998537200122516887
 PrefabInstance:
   m_ObjectHideFlags: 0
