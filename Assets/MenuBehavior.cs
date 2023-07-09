@@ -9,7 +9,20 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioMixer masterAudioMixer;
     [SerializeField] GameObject Menu;
 
-    public void PlayGame()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GoToStart();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            QuitGame();
+        }
+
+    }
+
+        public void PlayGame()
     {
         SceneManager.LoadScene("Main");
     }

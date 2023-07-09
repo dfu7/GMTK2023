@@ -12,6 +12,21 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
+        if (GameIsPaused)
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                LoadMenu();
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                DisplayControls();
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                CloseControls();
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
