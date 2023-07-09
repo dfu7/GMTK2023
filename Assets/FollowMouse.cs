@@ -68,6 +68,10 @@ public class FollowMouse : MonoBehaviour
         if (moveDir.magnitude >= 0.1f)
         {
             animator.SetBool("isWalking", true);
+
+            //Setting Walking to true. Loop while walk is true
+            //Create Puffs of Smoke
+
             Debug.Log("animated af!");
             qTo = Quaternion.LookRotation(moveDir);
             transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
